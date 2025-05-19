@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pathfinding Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=IM+Fell+English&display=swap" rel="stylesheet">
+</head>
+<header>
+    <h1>Wizard of Oz Pathfinding Algorithm Visualizer</h1>
+</header>
+<body>
+    <main>
+        <div id="instructions">
+          <h2><i class="fas fa-hat-wizard"></i> Help Dorothy Reach the Emerald City</h2>
+          <p>
+            Welcome to the magical world of <strong>The Wizard of Oz</strong>! This pathfinding visualizer transforms classic algorithms into a whimsical journey where your mission is to help <strong>Dorothy</strong> find her way to the <strong>Emerald City</strong> 🏰. Using A* or Dijkstra’s Algorithm, you’ll guide her along the iconic yellow brick road—navigating around magical obstacles along the way.
+          </p>
+          <div class="instruction-cards">
+
+            <div class="card">
+              <h3><i class="fas fa-shoe-prints"></i> Start the Journey</h3>
+              <p>Select <strong>"Dorothy"</strong> mode and click a cell to place <span class="start-label">Dorothy</span> at the beginning of the Yellow Brick Road.</p>
+            </div>
+
+            <div class="card">
+              <h3><i class="fas fa-chess-rook"></i> Emerald City Location</h3>
+              <p>Select <strong>"Emerald City"</strong> mode and click another cell to mark the location of the <span class="end-label">Emerald City</span> to find the Wizard of Oz.</p>
+            </div>
+
+            <div class="card">
+              <h3>🌿 Thorny Vines</h3>
+              <p>Select <strong>"Vines"</strong> mode to place <strong>thorny vines</strong> on the grid. These are magical barriers that Dorothy cannot pass through at all (weight = ∞).</p>
+            </div>
+
+            <div class="card">
+              <h3>🌲 Bushes </h3>
+              <p>Choose <strong>"Bush"</strong> mode to grow dense <strong>bushes</strong>. These slow Dorothy down but can still be crossed with some effort (weight = 5).</p>
+            </div>
+
+            <div class="card">
+              <h3>🐒 Flying Monkeys</h3>
+              <p>Select <strong>"Monkey"</strong> mode to summon <strong>flying monkeys</strong>. These are high-risk zones that Dorothy can cross, but only with significant cost (weight = 10).</p>
+            </div>
+
+            <div class="card">
+              <h3><i class="fas fa-magic"></i> Choose a Magic Spell</h3>
+              <p>Pick your preferred <strong>Algorithm</strong> (A* or Dijkstra) to help Dorothy navigate through Oz.</p>
+            </div>
+
+            <div class="card">
+              <h3><i class="fas fa-wand-sparkles"></i> Follow the Yellow Brick Road</h3>
+              <p>Click <strong>Find Path</strong> to guide Dorothy safely past obstacles to the Emerald City.</p>
+            </div>
+
+            <div class="card">
+              <h3><i class="fas fa-broom"></i> Start Over</h3>
+              <p>Click <strong>Clear</strong> to remove placed objects and restart Dorothy’s magical adventure.</p>
+            </div>
+
+          </div>
+
+          <p class="tip">💡<strong>Tip</strong>: Use the mode buttons above the grid to switch between placing Dorothy, the Emerald City, and the three types of obstacles.</p>
+        </div>
+
+
+    <div class="pathfinding-container">
+        <h1>Pathfinding Visualizer</h1>
+        <div class="algorithm-selector">
+        <label for="algorithm">Algorithm:</label>
+            <select id="algorithm">
+                <option value="astar">A*</option>
+                <option value="dijkstra">Dijkstra</option>
+            </select>
+        </div>
+        <div class="mode">
+          <label for="mode">Mode:</label>
+            <button id="start" class="start" title="Click to set the start point">Dorothy</button>
+            <button id="end" class="end"title="Click to set the end point">Emerald City</button>
+            <button id="wall" class="wall" title="Click to add thorny vines in the grid">Vines</button>
+            <button id="bush" class="bush" title="Click to toggle bushes in the grid">Bush</button>
+            <button id="monkey" class="monkey" title="Click to add flying monkeys in the grid">Monkey</button>
+        </div>
+        <div class="controls">
+            <button id="findPath" class="findPath" title="Click to find the shortest path">Find Path</button>
+            <button id="clear" class="clear" title="Clear the grid (start, end, walls)">Clear</button>
+        </div>
+        
+        <div id="grid"></div>
+
+        <div class="grid_settings">
+          <p>Grid Settings</p>
+          <label for="gridSize">Grid Size:</label>
+            <select id="gridSize">
+              <option value="10">10x10</option>
+              <option value="15">15x15</option>
+              <option value="20">20x20</option>
+            </select>
+
+            <label for="speed">Speed:</label>
+              <select id="speed">
+                <option value="10">Fast</option>
+                <option value="20" selected>Normal</option>
+                <option value="40">Slow</option>
+              </select>
+
+        </div>
+    </div>
+    </main>
+
+    <footer>
+      <p>Made with magic ✨ by Kristine Cerio | Inspired by L. Frank Baum's Wonderful Wizard of Oz</p>
+    </footer>
+
+  <script src="pathfiding.js"></script>
+</body>
+</html>
