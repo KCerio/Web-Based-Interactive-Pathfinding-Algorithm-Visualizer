@@ -130,18 +130,83 @@ h1 {
   color: #333;
 }
 
-.algorithm-selector {
-  margin-bottom: 15px;
-  font-size: 14px;
-  color: #204059;
+.grid_settings p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4b2e05;
+  margin: 0;
+  padding-right: 12px;
+  border-right: 1px solid #b2924f;
 }
 
-.algorithm-selector select {
+.grid_settings label {
+  margin: 0 8px 0 0;
+  font-size: 1rem;
+  color: #2d1e04;
+}
+
+.grid_settings select {
   padding: 6px 10px;
-  font-size: 14px;
+  font-size: 1rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #ffffff;
+  border: 1px solid #b2924f;
+  background-color: #fffdf2;
+  color: #2d1e04;
+  font-family: inherit;
+}
+
+.controls-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  background-color: #fffbe6; /* light parchment */
+  border: 2px solid #b2924f; /* golden-brown */
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin: 1.5rem auto;
+  width: fit-content;
+  font-family: 'IM Fell English', serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Inner section groups for better structure */
+.controls-container .section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.controls-container label {
+  font-size: 1rem;
+  color: #2d1e04;
+}
+
+.controls-container select,
+.controls-container button {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #b2924f;
+  background-color: #fffdf2;
+  color: #2d1e04;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.controls-container button:hover {
+  background-color: #2d1e04;
+}
+
+.controls-container p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4b2e05;
+  margin: 0;
+  padding-right: 12px;
+  border-right: 1px solid #b2924f;
 }
 
 
@@ -149,11 +214,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.mode {
-  margin-bottom: 15px;
-  font-size: 14px;
-  color: #204059;
-}
 
 button {
   margin: 0 5px 10px;
@@ -172,31 +232,6 @@ button:hover {
   color: white;
 }
 
-.start {
-  background-color: #4169E1;
-  color: white;
-}
-
-.end {
-  background-color: #50C878;
-  color: white;
-}
-
-.wall {
-  background-color:#2d1e04;
-  color: white;
-}
-
-.monkey {
-  background-color: brown;
-  color: white;
-}
-
-.bush {
-  background-color: #228B22;
-  color: white;
-}
-
 .clear {
   background-color: #ff6b6b;
   color: white;
@@ -207,6 +242,33 @@ button:hover {
   color: white;
   font-weight: bold;
 }
+
+/* Style for active buttons */
+.controls-container .start.active {
+  background-color: #4169E1;
+  color: white;
+}
+
+.controls-container .end.active {
+  background-color: #50C878;
+  color: white;
+}
+
+.controls-container .wall.active {
+  background-color:#2d1e04;
+  color: white;
+}
+
+.controls-container .monkey.active {
+  background-color: brown;
+  color: white;
+}
+
+.controls-container .bush.active {
+  background-color: #228B22;
+  color: white;
+}
+
 
 
 /* Grid Styling */
@@ -285,11 +347,6 @@ button:hover {
   background-color: #f3c04f;
 }
 
-/* Style for active buttons */
-.active {
-  background-color: palevioletred;
-  color: white;
-}
 
 .grid_settings {
   display: flex;
@@ -304,31 +361,6 @@ button:hover {
   font-family: 'IM Fell English', serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex-wrap: wrap; /* allows wrapping on smaller screens */
-}
-
-.grid_settings p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #4b2e05;
-  margin: 0;
-  padding-right: 12px;
-  border-right: 1px solid #b2924f;
-}
-
-.grid_settings label {
-  margin: 0 8px 0 0;
-  font-size: 1rem;
-  color: #2d1e04;
-}
-
-.grid_settings select {
-  padding: 6px 10px;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #b2924f;
-  background-color: #fffdf2;
-  color: #2d1e04;
-  font-family: inherit;
 }
 
 
@@ -360,3 +392,4 @@ footer{
     padding: 8px 12px;
   }
 }
+

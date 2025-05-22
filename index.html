@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pathfinding Visualizer</title>
+  <link rel="icon" type="image/png" href="images/lab3_logo.png">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=IM+Fell+English&display=swap" rel="stylesheet">
@@ -65,49 +66,54 @@
           <p class="tip">💡<strong>Tip</strong>: Use the mode buttons above the grid to switch between placing Dorothy, the Emerald City, and the three types of obstacles.</p>
         </div>
 
-
     <div class="pathfinding-container">
-        <h1>Pathfinding Visualizer</h1>
-        <div class="algorithm-selector">
-        <label for="algorithm">Algorithm:</label>
-            <select id="algorithm">
-                <option value="astar">A*</option>
-                <option value="dijkstra">Dijkstra</option>
-            </select>
-        </div>
-        <div class="mode">
-          <label for="mode">Mode:</label>
-            <button id="start" class="start" title="Click to set the start point">Dorothy</button>
-            <button id="end" class="end"title="Click to set the end point">Emerald City</button>
-            <button id="wall" class="wall" title="Click to add thorny vines in the grid">Vines</button>
-            <button id="bush" class="bush" title="Click to toggle bushes in the grid">Bush</button>
-            <button id="monkey" class="monkey" title="Click to add flying monkeys in the grid">Monkey</button>
-        </div>
-        <div class="controls">
-            <button id="findPath" class="findPath" title="Click to find the shortest path">Find Path</button>
-            <button id="clear" class="clear" title="Clear the grid (start, end, walls)">Clear</button>
-        </div>
-        
-        <div id="grid"></div>
+      <h1>Pathfinding Visualizer</h1>
 
-        <div class="grid_settings">
+      <!-- Unified Controls Container -->
+      <div class="controls-container">
+        <div class="section">
+          <p>Algorithm</p>
+          <select aria-label="algorithm" id="algorithm">
+            <option value="astar">A*</option>
+            <option value="dijkstra">Dijkstra</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <p>Mode</p>
+          <button id="start" class="start" title="Click to set the start point">Dorothy</button>
+          <button id="end" class="end" title="Click to set the end point">Emerald City</button>
+          <button id="wall" class="wall" title="Click to add thorny vines in the grid">Vines</button>
+          <button id="bush" class="bush" title="Click to toggle bushes in the grid">Bush</button>
+          <button id="monkey" class="monkey" title="Click to add flying monkeys in the grid">Monkey</button>
+        </div>
+
+        <div class="section">
           <p>Grid Settings</p>
           <label for="gridSize">Grid Size:</label>
-            <select id="gridSize">
-              <option value="10">10x10</option>
-              <option value="15">15x15</option>
-              <option value="20">20x20</option>
-            </select>
+          <select id="gridSize">
+            <option value="10">10x10</option>
+            <option value="15">15x15</option>
+            <option value="20">20x20</option>
+          </select>
 
-            <label for="speed">Speed:</label>
-              <select id="speed">
-                <option value="10">Fast</option>
-                <option value="20" selected>Normal</option>
-                <option value="40">Slow</option>
-              </select>
-
+          <label for="speed">Speed:</label>
+          <select id="speed">
+            <option value="10">Fast</option>
+            <option value="20" selected>Normal</option>
+            <option value="40">Slow</option>
+          </select>
         </div>
+      </div>
+
+      <div class="controls">
+          <button id="findPath" class="findPath" title="Click to find the shortest path">Find Path</button>
+          <button id="clear" class="clear" title="Clear the grid (start, end, walls)">Clear</button>
+      </div>
+
+      <div id="grid"></div>
     </div>
+
     </main>
 
     <footer>

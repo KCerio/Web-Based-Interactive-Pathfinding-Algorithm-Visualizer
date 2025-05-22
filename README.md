@@ -88,7 +88,7 @@ This visualizer is perfect for:
 
 ## 📸 Screenshots
 
-> Add screenshots or a screen recording here for visual impact.
+![Pathfinding Demo](images/screen_recording.gif)
 
 ---
 
